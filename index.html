@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="index.css">
+<body>
+    <div class="navigation">
+        <div class="navigatin-left">
+            <img src="sourse/logo.png" width="75px" height="75px" alt="">
+            <span>GYL</span>
+        </div>
+        <div class="navigatin-right">
+            <ul class="ul">
+                <li><a href="index.html" class='select'>首页</a></li>
+                <li><a href="singer.html">歌手</a></li>
+                <li><a href="song.html">歌曲</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="search">
+        <input id="search" type="text" value="搜索"><img id='sousuo' src="sourse/sousuo1.png" width="40px" height="40px" alt="搜索">
+    </div>
+    
+</body>
+<script>
+    var search=document.getElementById("search")
+    search.addEventListener("focus",function(){
+        if(search.value=='搜索')
+        search.value='';
+    })
+    search.addEventListener("blur",function(){
+        if(search.value=='')
+        {
+            search.value='搜索';
+        }
+    })
+    var sousuo=document.getElementById("sousuo")
+    sousuo.addEventListener("click",function(){
+        window.location.href='https://y.qq.com/n/ryqq/search?w='+search.value+'&remoteplace=txt.yqq.center';
+    })
+    document.addEventListener("keydown", function(){
+        let keycode = event.keyCode;
+        if (keycode == 13){
+            window.location.href='https://y.qq.com/n/ryqq/search?w='+search.value+'&remoteplace=txt.yqq.center';
+        }
+    });
+</script>
+</html>
